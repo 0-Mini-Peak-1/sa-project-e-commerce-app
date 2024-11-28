@@ -1,0 +1,240 @@
+body {
+  font-family: Kanit, sans-serif;
+}
+
+/* Checkout Page Container */
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+/* Main Layout */
+.checkout-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* User Info Section */
+.user-info {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.shipping-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shipping-form label {
+  font-size: 14px;
+  color: #555;
+}
+
+.shipping-form input,
+.shipping-form textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Kanit, sans-serif;
+}
+
+.shipping-form textarea {
+  resize: none;
+  font-family: Kanit, sans-serif;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Center vertically */
+  gap: 15px; /* Add space between checkbox and button */
+  margin-top: 10px;
+}
+
+.form-actions label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  white-space: nowrap;
+  padding-left: 5px;
+  gap: 5px;
+}
+
+.save-btn {
+  padding: 8px 16px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Kanit, sans-serif;
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  background: #e74c3c;
+}
+
+
+/* Cart Summary Section */
+.cart-summary {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Item Details */
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-item-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background: #e74c3c;
+}
+
+.remove {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: Kanit, sans-serif;
+}
+
+.remove:hover {
+  background: #ff1a1a;
+  
+}
+
+/* Cart Summary Totals */
+.cart-summary-totals {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.cart-summary-totals p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.confirm-btn {
+  width: 100%;
+  padding: 12px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Kanit, sans-serif;
+  margin-top: 10px;
+}
+
+.confirm-btn:hover {
+  background: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkout-main {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin');

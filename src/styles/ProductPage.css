@@ -1,0 +1,105 @@
+/* ProductPage.css */
+body {
+  margin: 0;
+  font-family: Kanit, sans-serif;
+}
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-grid a {
+  text-decoration: none;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.2s ease;
+  font-family: Kanit, sans-serif;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #c0392b;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.prod-price {
+  text-align: right;
+}
+
+.product-card .add-to-cart-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Kanit, sans-serif;
+}
+
+.product-card .add-to-cart-btn:hover {
+  background: #e74c3c;
+}
+
+/* New Class: Buy Now Button */
+.product-card .prod-buy-now-btn {
+  margin-top: 10px;
+  margin-left: 10px; /* Adds spacing between "Add to Cart" and "Buy Now" buttons */
+  padding: 10px 15px;
+  background: #c0392b; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Kanit, sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.product-card .prod-buy-now-btn:hover {
+  background: #e74c3c; /* Darker green on hover */
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.prod-description{
+  padding: 10px;
+  text-align: left;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin');

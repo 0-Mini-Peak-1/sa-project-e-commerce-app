@@ -1,0 +1,180 @@
+/* Shared Header Styles */
+.shared-header {
+    width: 100%;
+    background-color: #c0392b; /* Red background */
+    color: white;
+    padding: 20px 40px; /* Add padding for better height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .shared-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .shared-logo a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .shared-logo h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+  
+  .shared-logo p {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .shared-navbar {
+    display: flex; /* Use Flexbox to align items horizontally */
+    align-items: center; /* Vertically center items */
+    gap: 20px; /* Add space between links */
+    list-style: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .shared-navbar a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    white-space: nowrap; /* Prevent wrapping to the next line */
+    display: inline-block; /* Ensure inline-block behavior */
+    position: relative;
+  }
+  .shared-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Position underline slightly below the text */
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: white; /* Underline color */
+    transition: width 0.3s ease; /* Smooth animation */
+  }
+  
+  .shared-navbar a:hover::after {
+    width: 100%;
+  }
+  .shared-navbar .btn {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .shared-navbar .sign-up {
+    background: white;
+    color: #c0392b;
+    white-space: nowrap;
+    font-family: Kanit, sans-serif;
+  }
+  
+  .shared-navbar .login {
+    background: black;
+  color: white;
+  white-space: nowrap;
+  font-family: Kanit, sans-serif;
+  font-size: 15px;
+  }
+  
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .shared-header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .shared-navbar {
+    flex-wrap: wrap; /* Wrap nav items on smaller screens */
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .shared-navbar a,
+  .shared-navbar .btn {
+    font-size: 14px;
+  }
+
+  .shared-logo h1 {
+    font-size: 24px; /* Adjust title font size for smaller screens */
+  }
+}
+
+.user-info-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-icon,
+.company-icon {
+  font-size: 1.5rem;
+  color: #333; /* Neutral color for icons */
+}
+
+.welcome-message {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  font-family: Kanit, sans-serif;
+}
+
+.logout-btn {
+  background-color: #ff4b4b;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Kanit, sans-serif;
+}
+
+.logout-btn:hover {
+  background-color: #e63939;
+}
+
+.logout-btn:focus {
+  outline: 2px solid #ff4b4b;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .user-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .logout-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin');
+
+  
+  

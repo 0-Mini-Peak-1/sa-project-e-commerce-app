@@ -1,0 +1,110 @@
+/* General Layout */
+body {
+    font-family: 'Kanit',sans-serif;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Header (same as homepage) */
+  .contact-header {
+    width: 100%;
+    background-color: #c0392b;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Main Content */
+  .contact-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-family: 'Kanit',sans-serif;
+  }
+  
+  /* Contact Information Section */
+  .contact-info {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info .divider {
+    height: 2px;
+    background: #3498db;
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Store Location Section */
+  .store-location {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .store-location h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .store-location .divider {
+    height: 2px;
+    background: #3498db;
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .google-map {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .store-location p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-main {
+      grid-template-columns: 1fr; /* Stack sections vertically */
+    }
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin');
+  

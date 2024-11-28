@@ -1,0 +1,135 @@
+.invoice-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-details {
+  margin-bottom: 20px;
+  font-family: "Kanit", sans-serif;
+}
+
+.invoice-details p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.our-company-details {
+  text-align: right; /* Align text to the right */
+}
+
+.qr-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.qr-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.qr-code {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.qr-section p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.confirm-order-btn {
+  margin-top: 50px;
+  padding: 10px 20px;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Kanit, sans-serif;
+  margin-left: 650px;
+}
+
+.confirm-order-btn:hover {
+  background-color: #e74c3c;
+}
+
+.print-order-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Kanit, sans-serif;
+  margin-left: 663px;
+}
+
+.print-order-btn:hover {
+  background-color: #e74c3c;
+}
+
+.invoice-number {
+  text-align: right;
+}
+
+/* General print styles */
+@media print {
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: "Kanit", sans-serif;
+      -webkit-print-color-adjust: exact; /* Ensures colors are printed as intended */
+  }
+
+  .no-print {
+      display: none; /* Hide elements marked with no-print class */
+  }
+
+  .invoice-container {
+      width: auto; /* A4 landscape width */
+      height: auto; /* A4 landscape height */
+      margin: 0 auto;
+      padding: 20mm; /* Adjust padding for readability */
+      box-sizing: border-box;
+      background: white; /* Ensure a white background */
+      color: black; /* Ensure black text for printing */
+      page-break-inside: avoid;
+  }
+
+  .invoice-details, .our-company-details, .qr-section, ul {
+      page-break-inside: avoid;
+  }
+
+  h2, h3, p, ul {
+      margin: 0 0 10px 0; /* Adjust spacing for compact layout */
+  }
+
+  ul {
+      padding-left: 20px;
+  }
+
+  .our-company-details {
+      text-align: right; /* Align to the right */
+  }
+
+  .line-id {
+      text-align: left; /* Align Line ID section to the left */
+      margin-top: 20px;
+  }
+
+  .qr-section {
+      margin-top: 20px;
+  }
+
+  button {
+      display: none; /* Hide all buttons */
+  }
+}

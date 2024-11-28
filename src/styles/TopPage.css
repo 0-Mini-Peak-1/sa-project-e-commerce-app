@@ -1,0 +1,30 @@
+/* TopPage.css */
+.top-page-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; /* Width of the circle */
+    height: 50px; /* Height of the circle */
+    font-size: 20px;
+    background: #c0392b; /* Red background */
+    color: white;
+    border-radius: 50%; /* Make it perfectly circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .top-page-icon.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .top-page-icon:hover {
+    transform: scale(1.1);
+  }
+  

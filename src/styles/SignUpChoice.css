@@ -1,0 +1,105 @@
+/* SignUpChoice.css */
+
+/* Container Styles */
+.signup-choice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #c0392b; /* Background color */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  max-width: 500px; /* Limit header width */
+  margin: 0 auto; /* Center the header */
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin: 0;
+  color: white;
+}
+
+.header p {
+  font-size: 14px;
+  margin: 0;
+  color: white;
+}
+
+
+/* Choice Box */
+.choice-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Choice Card */
+.choice-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.choice-card:hover {
+  transform: scale(1.05);
+}
+
+.choice-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Choice Button */
+.choice-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: Kanit, sans-serif;
+}
+
+.choice-button:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .choice-box {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .choice-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin');
