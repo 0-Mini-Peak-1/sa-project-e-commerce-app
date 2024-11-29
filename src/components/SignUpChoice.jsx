@@ -19,7 +19,7 @@ const SignUpChoice = () => {
           onClick={() => navigate("/signup-individual")}
         >
           <img
-            src="https://via.placeholder.com/150"
+            src="https://media.discordapp.net/attachments/1254965795465990234/1311866287298969660/dsdsdssdsdsdsdds.png?ex=674a6a30&is=674918b0&hm=43bf3ce78a038385652e5c74e877d2932076bb55742cd728b2fff0f460ce5b96&=&format=webp&quality=lossless"
             alt="บุคคลทั่วไป"
             className="choice-image"
           />
@@ -30,7 +30,7 @@ const SignUpChoice = () => {
           onClick={() => navigate("/signup-company")}
         >
           <img
-            src="https://via.placeholder.com/150"
+            src="https://media.discordapp.net/attachments/1254965795465990234/1311846213947232338/1000039787.png?ex=674a577e&is=674905fe&hm=047daa97e10237514d20fe32c30dba65633ae41adade800ceaf59a2b3e0f86d7&=&format=webp&quality=lossless"
             alt="บริษัท"
             className="choice-image"
           />

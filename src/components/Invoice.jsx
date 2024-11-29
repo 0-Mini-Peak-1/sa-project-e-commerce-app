@@ -41,14 +41,14 @@ const Invoice = () => {
         ])
         .select()
         .single(); // Get the inserted invoice
-
+  
       if (invoiceError) {
         throw new Error("Failed to create invoice: " + invoiceError.message);
       }
-
+  
       const newInvoiceID = invoiceData.InvoiceID;
       setInvoiceID(newInvoiceID); // Update the state with the new InvoiceID
-
+  
       // Insert invoice details
       const invoiceDetails = cartItems.map((item) => ({
         InvoiceID: newInvoiceID,
@@ -56,22 +56,56 @@ const Invoice = () => {
         Quantity: item.quantity,
         TotalPrice: item.ProductPrice * item.quantity,
       }));
-
+  
       const { error: detailsError } = await supabase
         .from("InvoiceDetail")
         .insert(invoiceDetails);
-
+  
       if (detailsError) {
         throw new Error("Failed to create invoice details: " + detailsError.message);
       }
-
+  
+      // Decrease product stock in the database
+      for (const item of cartItems) {
+        // Fetch the current stock
+        const { data: productData, error: fetchError } = await supabase
+          .from("Product")
+          .select("Stock")
+          .eq("ProductID", item.ProductID)
+          .single();
+  
+        if (fetchError || !productData) {
+          console.error(`Failed to fetch stock for ProductID ${item.ProductID}:`, fetchError.message);
+          throw new Error("Failed to fetch product stock.");
+        }
+  
+        const newStock = productData.Stock - item.quantity;
+  
+        if (newStock < 0) {
+          throw new Error(`Insufficient stock for ProductID ${item.ProductID}.`);
+        }
+  
+        // Update the stock
+        const { error: updateError } = await supabase
+          .from("Product")
+          .update({ Stock: newStock })
+          .eq("ProductID", item.ProductID);
+  
+        if (updateError) {
+          console.error(`Failed to update stock for ProductID ${item.ProductID}:`, updateError.message);
+          throw new Error("Failed to update product stock.");
+        }
+      }
+  
       // Notify user of success
-      alert("Invoice and details saved successfully!");
+      alert("Invoice, details, and stock updates saved successfully!");
     } catch (error) {
-      console.error("Error saving invoice:", error.message);
-      alert("Failed to save invoice. Please try again.");
+      console.error("Error saving invoice or updating stock:", error.message);
+      alert("Failed to save invoice or update stock. Please try again.");
     }
   };
+  
+  
 
   return (
     <div>
