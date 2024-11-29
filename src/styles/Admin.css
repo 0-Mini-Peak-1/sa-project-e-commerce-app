@@ -31,4 +31,22 @@
     padding: 10px;
     border-bottom: 1px solid #ddd;
   }
+
+  .reports-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .reports-section th, .reports-section td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .reports-section th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
   

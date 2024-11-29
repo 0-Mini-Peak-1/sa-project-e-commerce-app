@@ -111,7 +111,7 @@ const Invoice = () => {
     <div>
       <Header className="no-print" />
       <div className="invoice-container">
-        <h2>ใบกำกับ / ใบเสร็จ</h2>
+        <h2>{invoiceID ? "ใบกำกับ / ใบเสร็จ" : "ใบแจ้งหนี้"}</h2>
         <div className="our-company-details">
           <p><strong>
             ห้างหุ้นส่วนจำกัด พีแอนด์พี แพดพริ้นติ้ง <br />
@@ -142,17 +142,47 @@ const Invoice = () => {
         </div>
         <div className="prod-list">
           <h3>รายการสินค้า</h3>
-          <ul>
-            {cartItems.map((item) => (
-              <li key={item.ProductID}>
-                {item.ProductName} - {new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' }).format(item.ProductPrice)} 
-                &nbsp;x {item.quantity}
-              </li>
-            ))}
-          </ul>
-          <p><strong>ค่าจัดส่ง:</strong> {new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' }).format(deliveryFee)}</p>
-          <p><strong>รวม:</strong> {new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' }).format(totalAmount)}</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartItems.map((item) => (
+                <tr key={item.ProductID}>
+                  <td>{item.ProductID}</td>
+                  <td>{item.ProductName}</td>
+                  <td>
+                    {new Intl.NumberFormat('th-TH', {
+                      style: 'currency',
+                      currency: 'THB',
+                    }).format(item.ProductPrice)}
+                  </td>
+                  <td>{item.quantity}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p>
+            <strong>ค่าจัดส่ง:</strong>{" "}
+            {new Intl.NumberFormat('th-TH', {
+              style: 'currency',
+              currency: 'THB',
+            }).format(deliveryFee)}
+          </p>
+          <p>
+            <strong>รวม:</strong>{" "}
+            {new Intl.NumberFormat('th-TH', {
+              style: 'currency',
+              currency: 'THB',
+            }).format(totalAmount)}
+          </p>
         </div>
+
         <div className="qr-section no-print">
           <h3>จ่ายด้วย PromptPay</h3>
           <img
